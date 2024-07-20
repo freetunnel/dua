@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 echo -e " [INFO] Downloading File"
 wget -q -O /usr/bin/add-ip-bot "https://raw.githubusercontent.com/freetunnel/satu/main/add-ip-bot.sh" && chmod +x /usr/bin/add-ip-bot
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/freetunnel/satu/main/menu/menu.sh" && chmod +x /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/freetunnel/dua/main/menu.sh" && chmod +x /usr/bin/menu
 wget -q -O /usr/bin/m-trgo "https://raw.githubusercontent.com/freetunnel/satu/main/menu/m-trgo.sh" && chmod +x /usr/bin/m-trgo
 wget -q -O /usr/bin/restore "https://raw.githubusercontent.com/freetunnel/satu/main/menu/restore.sh" && chmod +x /usr/bin/restore
 wget -q -O /usr/bin/backup "https://raw.githubusercontent.com/freetunnel/satu/main/menu/backup.sh" && chmod +x /usr/bin/backup
