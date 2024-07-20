@@ -436,6 +436,7 @@ res1() {
     systemctl restart xray
     systemctl restart noobzvpns
     systemctl restart daemon
+    syatemctl restart stunnel5
     systemctl restart udp-custom
     systemctl restart ws-dropbear
     systemctl restart ws-stunnel
