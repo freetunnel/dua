@@ -26,7 +26,7 @@ commonname=none
 email=none
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/freetunnel/dua/main/install/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/freetunnel/satu/main/install/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -147,16 +147,16 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/freetunnel/dua/main/install/index.html1"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/freetunnel/satu/main/install/index.html1"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/sbin/badvpn "https://raw.githubusercontent.com/freetunnel/dua/main/install/badvpn" >/dev/null 2>&1
+wget -O /usr/sbin/badvpn "https://raw.githubusercontent.com/freetunnel/satu/main/install/badvpn" >/dev/null 2>&1
 chmod +x /usr/sbin/badvpn > /dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn1.service "https://raw.githubusercontent.com/freetunnel/dua/main/install/badvpn1.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn2.service "https://raw.githubusercontent.com/freetunnel/dua/main/install/badvpn2.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn3.service "https://raw.githubusercontent.com/freetunnel/dua/main/install/badvpn3.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn1.service "https://raw.githubusercontent.com/freetunnel/satu/main/install/badvpn1.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn2.service "https://raw.githubusercontent.com/freetunnel/satu/main/install/badvpn2.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn3.service "https://raw.githubusercontent.com/freetunnel/satu/main/install/badvpn3.service" >/dev/null 2>&1
 systemctl disable badvpn1 
 systemctl stop badvpn1 
 systemctl enable badvpn1
@@ -198,7 +198,7 @@ apt -y install squid3
 
 # install squid for debian 11
 #apt -y install squid
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/freetunnel/dua/main/install/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/freetunnel/satu/main/install/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -222,7 +222,7 @@ cd
 # install stunnel
 # install stunnel 5 
 cd /root/
-wget -q -O stunnel5.zip "https://https://raw.githubusercontent.com/freetunnel/dua/main/stn/stunnel5.zip"
+wget -q -O stunnel5.zip "https://https://raw.githubusercontent.com/freetunnel/dua/main/stunnel5.zip"
 unzip -o stunnel5.zip
 cd /root/stunnel
 chmod +x configure
@@ -289,7 +289,7 @@ WantedBy=multi-user.target
 END
 
 # Service Stunnel5 /etc/init.d/stunnel5
-wget -q -O /etc/init.d/stunnel5 "https://https://raw.githubusercontent.com/freetunnel/dua/main/stn/stunnel5.init"
+wget -q -O /etc/init.d/stunnel5 "https://https://raw.githubusercontent.com/freetunnel/dua/main/stunnel5.init"
 
 # Ubah Izin Akses
 chmod 600 /etc/stunnel5/stunnel5.pem
@@ -314,10 +314,10 @@ systemctl restart stunnel5
 /etc/init.d/stunnel5 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/freetunnel/dua/main/install/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/freetunnel/satu/main/install/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # // install lolcat
-wget https://raw.githubusercontent.com/freetunnel/dua/main/install/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
+wget https://raw.githubusercontent.com/freetunnel/satu/main/install/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
 
 # memory swap 1gb
 cd
@@ -363,10 +363,10 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/issue.net "https://raw.githubusercontent.com/freetunnel/dua/main/install/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/freetunnel/satu/main/install/issue.net"
 
 #install bbr dan optimasi kernel
-wget https://raw.githubusercontent.com/freetunnel/dua/main/install/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/freetunnel/satu/main/install/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # blokir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -390,10 +390,10 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O issue "https://raw.githubusercontent.com/freetunnel/dua/main/install/issue.net"
-wget -O m-theme "https://raw.githubusercontent.com/freetunnel/dua/main/menu/m-theme.sh"
-wget -O speedtest "https://raw.githubusercontent.com/freetunnel/dua/main/install/speedtest_cli.py"
-wget -O xp "https://raw.githubusercontent.com/freetunnel/dua/main/install/xp.sh"
+wget -O issue "https://raw.githubusercontent.com/freetunnel/satu/main/install/issue.net"
+wget -O m-theme "https://raw.githubusercontent.com/freetunnel/satu/main/menu/m-theme.sh"
+wget -O speedtest "https://raw.githubusercontent.com/freetunnel/satu/main/install/speedtest_cli.py"
+wget -O xp "https://raw.githubusercontent.com/freetunnel/satu/main/install/xp.sh"
 
 chmod +x issue
 chmod +x m-theme
