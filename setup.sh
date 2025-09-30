@@ -251,7 +251,7 @@ function Casper3(){
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}  PROCESS INSTALLED SSH & OVVPN         ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/freetunnel/dua/main/ssh-vpn.sh2 && chmod +x ssh-vpn.sh2 && ./ssh-vpn.sh2
+wget https://raw.githubusercontent.com/freetunnel/dua/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
